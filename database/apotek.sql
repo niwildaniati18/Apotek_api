@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2023 at 03:15 PM
+-- Generation Time: Jan 10, 2023 at 06:46 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `klinik`
+-- Database: `apotek`
 --
 
 -- --------------------------------------------------------
@@ -37,21 +37,26 @@ CREATE TABLE `obat` (
 --
 
 INSERT INTO `obat` (`id`, `nama`) VALUES
-(1, 'Siladex'),
-(2, 'Panadol');
+(1, 'Siladex');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pasien`
+-- Table structure for table `pembeli`
 --
 
-CREATE TABLE `pasien` (
-  `id_pasien` int(5) NOT NULL,
-  `nama_pasien` varchar(25) NOT NULL,
-  `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
-  `umur` int(2) NOT NULL
+CREATE TABLE `pembeli` (
+  `umur` int(11) NOT NULL,
+  `nama_pembeli` varchar(25) NOT NULL,
+  `obat_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pembeli`
+--
+
+INSERT INTO `pembeli` (`umur`, `nama_pembeli`, `obat_id`) VALUES
+(22, 'dinda', 1);
 
 --
 -- Indexes for dumped tables
@@ -64,10 +69,10 @@ ALTER TABLE `obat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pasien`
+-- Indexes for table `pembeli`
 --
-ALTER TABLE `pasien`
-  ADD PRIMARY KEY (`id_pasien`);
+ALTER TABLE `pembeli`
+  ADD PRIMARY KEY (`umur`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

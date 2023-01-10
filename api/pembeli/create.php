@@ -8,13 +8,14 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include "../../database/database.php";
 
 $data = json_decode(file_get_contents("php://input"));
+$umur = $data->umur;
 $nama_pembeli = $data->nama_pembeli;
-$oabt_id = $data->obat_id;
+$obat_id = $data->obat_id;
 
 $hasil["success"] = false;
 $hasil["data"] = array();
 
-$insert_sql = "INSERT INTO pembeli VALUES ('$nama_pembeli','$obat_id)";
+$insert_sql = "INSERT INTO pembeli VALUES ('$umur,'$nama_pembeli','$obat_id)";
 $result = mysqli_query($connection, $insert_sql);
 if ($result) {
     $hasil["success"] = true;
