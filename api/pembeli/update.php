@@ -10,13 +10,13 @@ include "../../database/database.php";
 
 $data = json_decode(file_get_contents("php://input"));
 $nama_pembeli = $data->nama_pembeli;
+$obat_id = $data->obat_id;
 $umur = $data->umur;
-$id_pembeli = $data->id_pembeli;
 
 $hasil["success"] = false;
 $hasil["data"] = array();
 
-$update_sql = "UPDATE pembeli SET nama_pembeli='$nama_pembeli', umur='$umur' where id_pembeli=$id_pembeli";
+$update_sql = "UPDATE pembeli SET nama_pembeli='$nama_pembeli', obat_id='$obat_id' where umur=$umur";
 $result = mysqli_query($connection,$update_sql);
 if($result){
     $hasil["success"] = true;

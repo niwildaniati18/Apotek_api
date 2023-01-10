@@ -9,12 +9,12 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include "../../database/database.php";
 
 $data = json_decode(file_get_contents("php://input"));
-$id_pembeli = $data->id_pembeli;
+$umur = $data->umur;
 
 $hasil["success"] = false;
 $hasil["data"] = array();
 
-$delete_sql = "DELETE FROM pembeli where id_pembeli=$id_pembeli";
+$delete_sql = "DELETE FROM pembeli where umur=$umur";
 $result = mysqli_query($connection,$delete_sql);
 if($result){
     $hasil["success"] = true;
