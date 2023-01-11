@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2023 at 06:46 AM
+-- Generation Time: Jan 11, 2023 at 05:46 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -37,7 +37,13 @@ CREATE TABLE `obat` (
 --
 
 INSERT INTO `obat` (`id`, `nama`) VALUES
-(1, 'Siladex');
+(1, 'Siladex'),
+(2, 'Ampicilin'),
+(3, 'Biotin'),
+(4, 'Calcium Carbonate'),
+(5, 'Dopamine'),
+(6, 'Fluphenazine'),
+(7, 'Glycerol');
 
 -- --------------------------------------------------------
 

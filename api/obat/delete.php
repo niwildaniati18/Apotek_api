@@ -11,7 +11,7 @@ include "../../database/database.php";
 $data = json_decode(file_get_contents("php://input"));
 $id = $data->id;
 
-$hasil["success"] = false;
+$hasil[" success"] = false;
 $hasil["data"] = array();
 
 $delete_sql = "DELETE FROM obat where id=$id";

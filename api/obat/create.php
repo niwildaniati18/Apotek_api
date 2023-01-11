@@ -8,7 +8,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include "../../database/database.php";
 
 $data = json_decode(file_get_contents("php://input"));
-$nama = $data->nama;
+$nama = $data->$nama;
 
 $hasil["success"] = false;
 $hasil["data"] = array();
